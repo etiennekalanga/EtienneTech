@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Réalisations</title>
+    <link rel="stylesheet" href="../Css/realisations.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mes Réalisations</h1>
+    </header>
+
+    <div class="container">
+        <!-- Section pour les images -->
+        <section>
+            <h2>Les Images</h2>
+            <div class="gallery">
+                <div class="item">
+                    <img src="../Images/realisations/pro1.jpg" alt="Réalisation 1">
+                </div>
+                <div class="item">
+                    <img src="../Images/realisations/pro2.jpg" alt="Réalisation 2">
+                </div>
+                <div class="item">
+                    <img src="../Images/realisations/pro3.jpg" alt="Réalisation 3">
+                </div>
+                <!-- Ajoutez plus d'images ici -->
+        </section>
+
+        <!-- Section pour les vidéos -->
+        <section>
+            <h2>Les Vidéos</h2>
+            <div class="gallery">
+                <div class="item">
+                    <video controls>
+                        <source src="../videos/ttOK.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <div class="item">
+                    <video controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <div class="item">
+                    <video controls>
+                        <source src="video3.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <!-- Ajoutez plus de vidéos ici -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript pour la lightbox (affichage des images en grand)
+        document.querySelectorAll('.gallery img').forEach(image => {
+            image.onclick = () => {
+                const lightbox = document.createElement('div');
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                lightbox.style.display = 'flex';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.zIndex = '1000';
+
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '90%';
+                img.style.borderRadius = '8px';
+
+                lightbox.appendChild(img);
+                document.body.appendChild(lightbox);
+
+                lightbox.onclick = () => {
+                    document.body.removeChild(lightbox);
+                };
+            };
+        });
+    </script>
+
+</body>
+</html>

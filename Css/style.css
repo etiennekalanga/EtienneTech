@@ -1,0 +1,219 @@
+﻿/*mise en forme de la page toute entière*/
+*{
+    font-family:Franklin Gothic Book;
+    margin:0 ; padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+html{
+    font-size: 70%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/**barre de defilement*/
+html::-webkit-scrollbar-track{background:  rgb(0, 0, 0);}
+html::-webkit-slider-thumb{background: rgb(82, 183, 250);}
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color:#e67e22;
+}
+/* la taille de toutes les sections*/
+section{
+    padding: 5rem 10%;
+}
+
+/******************************************LE SLIDES******************************/
+.slider {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 72vh;  
+    animation: slide 20s infinite ;
+    box-shadow: rgb(0, 0, 0) 0px 2px 15px;
+    flex-wrap: wrap;
+    
+}
+.load{
+    animation: slide 2s;
+}
+.content{
+    padding: 10rem 5rem;
+    flex-wrap: wrap;
+}
+.principal{
+    text-align: center;
+    background: rgba(255, 255, 255, 0.178);
+    border-top: 2rem solid #e4e1e6ab;
+    border-left: 0.5rem solid #e4e1e6ab;
+    border-right: 0.5rem solid #e4e1e6ab;
+    border-bottom: 0.1rem solid #e4e1e6ab;
+    border-top-left-radius: 5rem;border-top-right-radius: 5rem;
+    padding: 4rem 2rem;
+   
+}
+.principal h3{
+    font-size: 5rem;
+    color:rgb(255, 255, 255);
+    flex-wrap: wrap;
+    font-family:Franklin Gothic Medium;
+}
+/*le texte Tech en roue*/
+.principal h3 span{
+    color:#e67e22;
+    font-size: 5rem;
+    font-family:Franklin Gothic Medium;
+}
+.principal p{
+    color: white;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    font-family:Franklin Gothic Book;
+}
+.btn-slide{
+    text-decoration: none;
+    font-size: 2rem;
+    background: #e67e22;
+    cursor: pointer;
+    color: white;
+    border-radius: 5rem 2px;
+    padding: 1rem 3rem;
+    font-family:Franklin Gothic Medium;
+}
+.btn-slide:hover{
+    background-color: #28a745;
+    transform: scale(1.1);
+    color:black;  
+}
+@keyframes slide  {
+    0%{
+    background-image:  linear-gradient(to top,#000000,transparent), url(../Images/slide/1.jpg) ;
+    }
+    20%{
+    background-image:linear-gradient(to top,#000000,transparent), url(../Images/slide/2.jpg);
+    }
+    40%{
+    background-image:linear-gradient(to top,#000000,transparent), url(../Images/slide/3.jpg);
+    }
+    60%{
+    background-image:linear-gradient(to top,#000000,transparent), url(../Images/slide/4.jpg);
+    }
+   80%{
+    background-image: linear-gradient(to top,#000000,transparent),url(../Images/slide/5.jpeg);
+    }
+    100%{
+    background-image:linear-gradient(to top,#000000,transparent), url(../Images/slide/web.jpg);
+    }
+}
+/*----------------------------------------------------------------------------------------------------------*/
+
+/** a propos -----------------------------------------------------------------------------**/
+/* disposition de la section*/
+#aproposimage{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top:1rem;
+}
+/*div ima*/
+#aproposimage .imagess{
+    flex:1 1 41rem;
+}
+#aproposimage .imagess img{
+    width: 100%;
+}
+/* div texte*/
+#aproposimage .contenupropos{
+    flex: 1 1 41em;
+    padding: 3rem ;
+    background:White;
+}
+#aproposimage .contenupropos h3{
+    font-size: 3rem;
+    color: #28a745;
+    font-family:Franklin Gothic Medium;
+}
+#aproposimage .contenupropos p{
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align:left;
+    font-family:Franklin Gothic Book;
+    color: #666;
+}
+/*mise en forme des boutons qui sont sur apropos et services*/
+.btn{
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background: #e67e22;
+    cursor: pointer;
+    color: white;
+}
+.btn:hover{
+    background: rgb(0, 0, 0);
+    color:rgb(255, 255, 255)
+}
+
+/** fin apropos*************************************************************************************/
+
+
+@media (max-width:1200px){
+}
+@media (max-width:991px){
+    html{
+        font-size: 65%;
+    }
+    section{
+        padding:3rem 2em;
+    }
+}
+@media (max-width:768px){
+    html{
+        font-size: 60%;
+    }
+    .slider {
+        width: 100%;
+        height: 50vh;          
+    }
+.principal h3{
+    font-size: 2.8rem;
+}
+/*le texte Tech en roue*/
+.principal h3 span{
+    color:#e67e22;
+    font-size: 2.8rem;
+}
+.principal{
+    padding: 2rem 2rem;
+}
+.principal p{
+    font-size: 2rem;
+}
+.btn-slide{
+    font-size: 2.5rem;
+    border-radius: 5rem 2px;
+    padding: 0.5rem 3rem;
+}
+/*mise en forme texte apropos-----------------------------------------------*/
+#aproposimage .contenupropos h3{
+    font-size: 2.5rem;
+}
+#aproposimage .contenupropos p{
+    font-size: 1.8rem;
+}
+/*mise en forme des boutons qui sont sur apropos et services*/
+.btn{
+    font-size: 1.8rem;
+}
+
+}
+@media (max-width:450px){
+    html{
+        font-size: 55%;
+    }
+}

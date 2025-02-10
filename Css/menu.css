@@ -1,0 +1,205 @@
+﻿/* nav de navigation*/
+#menu-navigation{
+    display: flex; /* direction veritical*/
+    justify-content: space-between;  /* espace entre menu*/
+    box-shadow: rgb(0, 0, 0); /* couleur contour*/
+    background: #000000;
+}
+.logo{
+    padding: 1rem;
+    margin-left: 5rem;
+}
+.logo a{
+    text-decoration: none; /*supprimer le style par defaut*/
+    color:white;
+    font-size: 3rem; 
+    font-family:Franklin Gothic Medium;
+}
+.logo span{
+    color: #e67e22;
+    font-size: 3rem; 
+    font-family:Franklin Gothic Medium;
+}
+/*------------------------------------------------*/
+.Menu{
+    display: inline-flex; /* la position du blog ul qui contient tous les liens*/
+}
+.Menu .lien{
+    list-style: none; /* affacer le puces de tous les liens*/
+    padding: 2.5rem 0rem;
+}
+/** mise en forme de (a) de tous les liens */
+.Menu .lien a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem; /* espace entre le liens*/
+    font-size: 1.8rem;
+    font-family:Franklin Gothic Medium;
+}
+.Menu .lien a:hover{
+    border-bottom:1px solid white;
+    color:#e67e22;
+}
+/* sous menu*/
+.Menu2 .lien2{
+    list-style: none; /* effacer le style du sous menu*/
+}
+.Menu2 .lien2 a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem; /* espace entre sous menu*/
+    font-size: 1.5rem;
+    font-family:Franklin Gothic Book;
+    
+}
+/* mise en forme du blog sous menu*/
+.sous-menu .Menu2{
+    position: absolute;
+    display: none;
+    background: #00000085;
+    margin-top: 3rem;
+    width: 12rem;
+    margin-left: 0px;
+    text-align: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.sous-menu .Menu2 .lien2{
+    margin: 20px 0;
+}
+.menu-deroulant:hover .sous-menu .Menu2{
+    display: block;
+    top: 3rem;
+}
+/* mega menu*/
+.megamenu{
+    position: absolute; /* position du mega menu */
+    background: #00000085;
+    width: 80%; /*marge droite du mega*/
+    left:10%; /*marge gauche du mega*/
+    margin-top: 1.2rem;
+    padding: 20px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    display: none;  
+}
+.menu-deroulant-mega:hover .megamenu{
+    display: block;
+    transition: all 0.3s ease-in;
+}
+/*allignement du container et colonne du mega menu*/
+.container-mega-menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.colonne ul{
+    display: block;
+    text-align: center;
+}
+.colonne ul li{
+    margin:20px 0;
+}
+.colonne .logo{
+    height: 200px;
+    width: 200px;
+    margin:auto;
+    border-radius: 1rem;
+    border:solid 3px white;
+}
+.colonne h2{
+    color: #e67e22;
+    font-size: 1.5rem;
+    border-bottom:1px solid white;
+    font-family:Franklin Gothic Book;
+}
+
+/* responsive */
+@media(max-width:1200px){
+
+}
+@media(max-width:991px){
+    html{
+        font-size:65%;
+    }
+    section{
+        padding: 3rem 2rem;
+    }
+    .menu-deroulant,
+    .menu-deroulant-mega{
+        display: none;
+    }
+}
+@media(max-width:760px){
+    
+    .Menu{
+        display: none;
+    }
+    .menu-responsive{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        background: white;
+        padding: 1rem;
+    }
+    .menu-responsive::after{
+        position: absolute;
+        content: "";
+        height: 4px;
+        background-color: rgb(255, 0, 0);
+        width: 30px;
+        box-shadow: 0 10px 0 black;
+        transform: translateY(-10px);
+        transition:0.5s;
+    }
+    .menu-responsive.active::after{
+        box-shadow: 0 0 0 red;
+        transform: rotate(45deg);
+    }
+    .menu-responsive::before{
+        position: absolute;
+        content: "";
+        height: 4px;
+        background-color: #e67e22;
+        width: 30px;
+        transform: translateY(10px);
+        transition:0.5s;
+    }
+    .menu-responsive.active::before{
+        transform: rotate(-45deg);
+    }
+    .Menu.responsive{
+        display: flex;
+        position: absolute;
+        top:5rem;  
+        right: 0px;
+        left: 0px;
+        flex-direction: column;
+        background: #00000085;
+        align-items: unset;
+        animation: animer-menu is forwards;
+        border-bottom: 2px solid #e67e22;
+        text-align: center;
+    }
+    .Menu.responsive a {
+        padding: 2rem;
+        line-height:0px;
+        font-size: 2.5rem;
+        
+      
+    }
+    @keyframes animer-menu {
+        0%{
+            transform: translateY(0);
+        }
+        100%{
+            transform: translateY(100);
+        }
+    }
+
+}
